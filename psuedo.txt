@@ -1,0 +1,44 @@
+
+HTML:
+create a board 7x6 - divs in display grid W/ onClick
+create 7 buttons w/ onClick fx over each column
+create restart button w/ on click
+create h1 connect 4
+create empty h2
+JS:
+define winner, current player and selections
+define players as 1 and -1 with name and color
+    name p1 and p2 respectively
+    color red and yellow respectively
+define winnning combos
+    0, 1, 2, 3
+    1, 2, 3, 4
+    0, 8, 16, 24 etc.
+start game fx 
+    assign current player
+    assign no winner
+    assign selections array [42 0's]
+ccreate on click fx
+    if there is a winner 
+        negate on click fx
+    else if index clicked is equal to 0
+        fills in largest index in the column w/player number (bottom)
+        insert current player (1 or -1) into the array
+        muttiply current player by -1
+    else 
+        negate on click 
+determine winner
+    forEach fx adding values of indx's of winning combos e.g. [0] + [1] + [2] + [3]
+        runs throunch winng combos 
+        if abs sum is equal to 4 there is a winner
+            if sum > 0 (4) innnerHTML p1 wins to h2
+            if sum < 0  (-4) innerHTML p2 wins h2
+            change winner to true which negates onclick fx
+tie game
+    if selections do not contain 0 and there is no winner
+        innerHTML tie game h2
+add reload fx to restart button
+        
+
+        
+
