@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let chip = document.querySelectorAll(".circle")
-    let winner;
+    let winner = null;
     let selections;
     
     const player = {
@@ -100,15 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
         chip[i].onclick = () => {
             // console.log(chip[i +7]);
             let nextRow = chip[i + 7];
-          if (nextRow.classList.contains('taken')) {
-                    selections[i] = player[currentPlayer.toString()].value;//click inserts index in selections array
-                    // console.log(selections)
-                    let color = currentPlayer == 1 ? 'red': 'yellow'
-                    chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
-                    chip[i].classList.add('taken')
-                    currentPlayer *= -1//changes player
+          if (winner != null) {
+            return;
+          }else if
+            (nextRow.classList.contains('taken')) {
+            selections[i] = player[currentPlayer.toString()].value;//click inserts index in selections array
+            // console.log(selections)
+            let color = currentPlayer == 1 ? 'red': 'yellow'
+            chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
+            chip[i].classList.add('taken')
+            currentPlayer *= -1//changes player
+            } else {
+                return;
                 }
-    
             }
         }
     })
