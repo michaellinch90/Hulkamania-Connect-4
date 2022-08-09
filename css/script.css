@@ -6,8 +6,14 @@
 .title {
     grid-column: 1 / span 3;
 }
-
+.outcome {
+    grid-column: 1 / span 3;
+}
+.refresh {
+    grid-column: 1 / span 3;
+}
 .board {
+    grid-column: 2 / auto;
     display: grid;
     grid-template-columns: repeat(7, 100px);
     grid-template-rows: repeat(7, 100px);
