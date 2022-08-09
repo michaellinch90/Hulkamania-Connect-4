@@ -1,0 +1,25 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(7, 100px);
+    width: 700px;
+    height: 600px;
+    justify-content: center;
+    background-color: blue;
+}
+
+.circle { 
+    background-color: white;
+    border-radius: 50%;
+    margin: 5px;
+    
+}
+
+.grid:hover {
+    background-color: orange;
+}
+.taken {
+    background-color: white;
+    border-radius: 50%;
+    margin: 5px;
+}
