@@ -1,3 +1,12 @@
+.screen {
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 100px 100px auto 100px;
+}
+.title {
+    grid-column: 1 / span 3;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(7, 100px);
