@@ -41,4 +41,9 @@ add reload fx to restart button
         
 
         
-
+for(let i = 0; i < 42; i++) {
+    let elemDiv = document.createElement('div');
+    let className = 'square' + i
+    elemDiv.classlist.add('className');
+    document.body.appendChild(elemDiv);
+}
