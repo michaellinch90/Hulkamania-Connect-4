@@ -1,8 +1,9 @@
 let selections;
+let winner = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     let chip = document.querySelectorAll(".circle")
-    let winner = null;
+    
     
     
     const player = {
@@ -110,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let color = currentPlayer == 1 ? 'red': 'yellow'
             chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
             chip[i].classList.add('taken')
-           
             currentPlayer *= -1//changes player
             checkWinner();
             } else {
@@ -121,9 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function checkWinner() {
-        console.log('hello');
         winningCombos.forEach(function(combo) {
-            console.log(selections)
+            console.log(selections);
             let comboSum = parseInt(selections[combo[0]]) + 
                             parseInt(selections[combo[1]]) + 
                             parseInt(selections[combo[2]]) +
@@ -132,10 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Math.abs(comboSum) === 4) {
                 if (comboSum > 0) {
                     document.querySelector('h2').innerHTML = "RED PLAYER WINS!"
+                    winner = true
                     console.log('the comboSum', comboSum)
                 } else if (comboSum < 0)
                     document.querySelector('h2').innerHTML = "YELLOW PLAYER WINS"
-            }
-            winner = true
-        });
+                    winner = true
+            } 
+            console.log(winner);
+        })
+        if (!selections.includes(0) && winner == null) {
+            document.querySelector('h2').innerHTML = "Tie Game"
+        }
     }
