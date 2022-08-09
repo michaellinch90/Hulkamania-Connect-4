@@ -1,7 +1,9 @@
+let selections;
+
 document.addEventListener('DOMContentLoaded', () => {
     let chip = document.querySelectorAll(".circle")
-    let winner = true;
-    let selections;
+    let winner = null;
+    
     
     const player = {
         '1' : {
@@ -104,10 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
           }else if
             (nextRow.classList.contains('taken')) {
             selections[i] = player[currentPlayer.toString()].value;//click inserts index in selections array
+            console.log(selections)
             let color = currentPlayer == 1 ? 'red': 'yellow'
             chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
             chip[i].classList.add('taken')
+           
             currentPlayer *= -1//changes player
+            checkWinner();
             } else {
                 return;
                 }
@@ -116,15 +121,21 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function checkWinner() {
-        winningCombos.forEach(combo => {
-            let comboSum = selections[combo[0]] + selections[combo[1]] + selections[combo[2]] + selections[combo[3]]
+        console.log('hello');
+        winningCombos.forEach(function(combo) {
+            console.log(selections)
+            let comboSum = parseInt(selections[combo[0]]) + 
+                            parseInt(selections[combo[1]]) + 
+                            parseInt(selections[combo[2]]) +
+                            parseInt(selections[combo[3]])
+                            console.log(comboSum);
             if (Math.abs(comboSum) === 4) {
                 if (comboSum > 0) {
                     document.querySelector('h2').innerHTML = "RED PLAYER WINS!"
+                    console.log('the comboSum', comboSum)
                 } else if (comboSum < 0)
                     document.querySelector('h2').innerHTML = "YELLOW PLAYER WINS"
             }
-            winer = true
+            winner = true
         });
     }
-    
