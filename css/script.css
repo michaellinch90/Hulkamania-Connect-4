@@ -1,16 +1,29 @@
 .screen {
     display: grid;
     grid-template-columns: 100px auto 100px;
-    grid-template-rows: 100px 100px auto 100px;
+    grid-template-rows: 80px 50px auto 100px;
 }
 .title {
+    font-size: 50px;
     grid-column: 1 / span 3;
+    text-align: center;
+    margin-bottom: 0px;
 }
 .outcome {
+    font-size: 50px;
     grid-column: 1 / span 3;
+    
+    margin: 0px;
+    text-align: center;
+    overflow-wrap: wrap;
 }
-.refresh {
-    grid-column: 1 / span 3;
+#refresh {
+    grid-column: 2;
+    width: 100px;
+    height: 45px;
+    margin: 10 px;
+    margin-top: 0px;
+    margin: auto;
 }
 .board {
     grid-column: 2 / auto;
@@ -21,6 +34,7 @@
     height: 600px;
     justify-content: center;
     background-color: blue;
+    margin: auto;
 }
 
 .circle { 
