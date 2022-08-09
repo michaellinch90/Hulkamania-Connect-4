@@ -143,3 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('h2').innerHTML = "Tie Game"
         }
     }
+    let refreshButton = document.getElementById("refresh");
+
+    refreshButton.onclick = function (){
+        location.reload();
+    }
