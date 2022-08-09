@@ -1,13 +1,17 @@
 .screen {
     background-color: rgb(46, 211, 211);
     display: grid;
-    grid-template-columns: 100px auto 100px;
+    grid-template-columns: 300px auto 300px;
     grid-template-rows: 80px 50px auto 100px;
+    justify-items: center;
+    align-items: center;
     font-family: 'Poiret One', cursive;
     font-family: 'Titillium Web', sans-serif;   
 }
 .title {
-    font-size: 50px;
+    color: antiquewhite;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;/* 1 pixel black shadow to left, top, right and bottom */
+    font-size: 50px ;
     grid-column: 1 / span 3;
     text-align: center;
     margin-bottom: 0px;
@@ -22,11 +26,10 @@
 }
 #refresh {
     grid-column: 2;
-    width: 100px;
-    height: 45px;
-    margin: 10 px;
-    margin-top: 0px;
+    background: antiquewhite;
+    border-radius: 5px;
     margin: auto;
+    cursor: pointer;
 }
 .board {
     grid-column: 2 / auto;
@@ -38,17 +41,22 @@
     justify-content: center;
     background-color: blue;
     margin: auto;
+    padding: 5px;
+    box-shadow: 10px 5px 5px #716d6d;
+    border-radius: 25px;
 }
 .bottom {
-    opacity: 0;
+    opacity: 0; /* makes object transparent */
     background-color: white;
     border-radius: 50%;
     margin: 5px;
+    height: 0px;
 }
 .circle { 
     background-color: rgb(46, 211, 211);
     border-radius: 50%;
     margin: 5px;
+    cursor: pointer;
     
 }
 
@@ -68,4 +76,13 @@
     border-radius: 50%;
     margin: 5px;
     
+}
+.score {
+    height: 100px;
+    width: 100px;
+    background-color: antiquewhite;
+    box-shadow: 10px 5px 5px #716d6d;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
