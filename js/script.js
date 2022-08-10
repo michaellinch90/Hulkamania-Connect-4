@@ -136,17 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
                             parseInt(selections[combo[3]])
                             // console.log(comboSum);
             if (Math.abs(comboSum) === 4) {
+                let myImageYellow = new Image();
+                let myImageRed = new Image();
                 if (comboSum > 0) {
-                    document.querySelector('h2').innerHTML = "RED PLAYER WINS!"
+                    myImageRed.src = "https://fontmeme.com/permalink/220810/5014fffd180dcf1452ce23093f492c11.png";
+                    document.querySelector('h2').appendChild(myImageRed);
                     winner = true
                     // console.log('the comboSum', comboSum)
-                    redScore + 1
-                    // console.log('this is red' + redScore)
-                } else if (comboSum < 0)
-                    document.querySelector('h2').innerHTML = "YELLOW PLAYER WINS"
+                    redScore++
+                    console.log('this is red' + redScore)
+                    document.getElementById('redScore').innerHTML = redScore;
+                } if (comboSum < 0)
+                // let myImage = new Image();
+                 myImageYellow.src = "https://fontmeme.com/permalink/220810/178370e20ac7455362c4467e594b5b76.png";
+                 document.body.appendChild(myImageYellow);
+                    document.querySelector('h2').appendChild(myImageYellow);
                     winner = true
-                    yellowScore + 1
-                    // console.log(yellowScore);
+                    yellowScore++
+                    console.log(yellowScore);
+                    console.log(comboSum);
+                    document.getElementById('yellowScore').innerHTML = yellowScore;
             } 
             // console.log(winner);
         })
@@ -159,3 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshButton.onclick = function (){
         location.reload();
     }
+    document.getElementById('redScore').innerHTML = redScore;
+    document.getElementById('yellowScore').innerHTML = yellowScore;
+
