@@ -106,13 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
           if (winner != null) {
             return;  
           }if (chip[i].classList.contains('taken')) {
-            // console.log('bye');
             return;
           }else if
             (nextRow.classList.contains('taken')) {
-                // console.log('hello');
             selections[i] = player[currentPlayer.toString()].value;//click inserts index in selections array
-            // console.log(selections)
             let color = currentPlayer === 1 ? 'red': 'yellow'
             chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
             chip[i].classList.add('taken')
@@ -133,32 +130,29 @@ document.addEventListener('DOMContentLoaded', () => {
                             parseInt(selections[combo[1]]) + 
                             parseInt(selections[combo[2]]) +
                             parseInt(selections[combo[3]])
-                            // console.log(comboSum);
             if (Math.abs(comboSum) === 4) {
                 let myImageYellow = new Image();
                 let myImageRed = new Image();
-                // let redScore = redScoreStart;
-                // let yellowScore = yellowScoreStart;
+                let belt = new Image(300, 300);
+                belt.src = "https://i.imgur.com/dPOu4lD.png";
                 if (comboSum > 0) {
                     myImageRed.src = "https://fontmeme.com/permalink/220810/5014fffd180dcf1452ce23093f492c11.png";
                     document.querySelector('h2').appendChild(myImageRed);
+                    document.getElementById('redScore').appendChild(belt);
                     winner = true
-                    // console.log('the comboSum', comboSum)
-                    // redScore++
                     console.log('this is red' + redScore)
-                    document.getElementById('redScore').innerHTML = redScore;
+                    
                 } if (comboSum < 0)
-                // let myImage = new Image();
                  myImageYellow.src = "https://fontmeme.com/permalink/220810/178370e20ac7455362c4467e594b5b76.png";
                  document.body.appendChild(myImageYellow);
                     document.querySelector('h2').appendChild(myImageYellow);
+                    document.getElementById('yellowScore').appendChild(belt);
                     winner = true
-                    // yellowScore++
                     console.log(yellowScore);
                     console.log(comboSum);
-                    document.getElementById('yellowScore').innerHTML = yellowScore;
+                    
             } 
-            // console.log(winner);
+            
         })
         if (!selections.includes(0) && winner == null) {
             document.querySelector('h2').innerHTML = "Tie Game"
@@ -166,36 +160,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let refreshButton = document.getElementById("refresh");
+    
+    // var audio = new Audio(Desktop/are-you-crazy.mp3);
+
+//     // audio.oncanplaythrough = function(){
+//     // audio.play();
+// }
 
     refreshButton.onclick = function (){
+        // audio.play();
         location.reload();
     }
-    for (i = 0; i<chip.length; i++) {
-        let nextButton = document.getElementById("next");
-        chip.classList.remove('red');
-        nextButton.onclick = function (){
-        selections.splice('0');
-        // console.log(selections);
-        selections.push = [0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0,
-          ]
-        // console.log(selections);
-        chip.classList.remove('red');
-        
-    }
     
-    }
-    // let nextButton = document.getElementById("next");
-    // nextButton.onclick = function (){
-    //     selections.splice('0');
-    //     console.log(selections);
 
-    // }
-    
-    document.getElementById('redScore').innerHTML = redScoreStart;
-    document.getElementById('yellowScore').innerHTML = yellowScoreStart;
 
