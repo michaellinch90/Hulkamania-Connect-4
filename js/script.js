@@ -1,5 +1,7 @@
 let selections;
 let winner = null;
+let redScore = 0;
+let yellowScore = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     let chip = document.querySelectorAll(".circle")
@@ -57,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
         [[7], [14], [21], [28]],
         [[14], [21], [28], [35]],
         [[1], [8], [15], [22]],
-        [[8], [15], [22], [35]],
-        [[15], [22], [29], [42]],
+        [[8], [15], [22], [29]],
+        [[15], [22], [29], [36]],
         [[2], [9], [16], [23]],
-        [[9], [15], [22], [29]],
+        [[9], [16], [23], [30]],
         [[16], [23], [30], [37]],
         [[3], [10], [17], [24]],
         [[10], [17], [24], [31]],
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }else if
             (nextRow.classList.contains('taken')) {
             selections[i] = player[currentPlayer.toString()].value;//click inserts index in selections array
-            console.log(selections)
+            // console.log(selections)
             let color = currentPlayer == 1 ? 'red': 'yellow'
             chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
             chip[i].classList.add('taken')
@@ -122,22 +124,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkWinner() {
         winningCombos.forEach(function(combo) {
-            console.log(selections);
+            // console.log(selections);
+            let redScore = 0;
             let comboSum = parseInt(selections[combo[0]]) + 
                             parseInt(selections[combo[1]]) + 
                             parseInt(selections[combo[2]]) +
                             parseInt(selections[combo[3]])
-                            console.log(comboSum);
+                            // console.log(comboSum);
             if (Math.abs(comboSum) === 4) {
                 if (comboSum > 0) {
                     document.querySelector('h2').innerHTML = "RED PLAYER WINS!"
                     winner = true
-                    console.log('the comboSum', comboSum)
+                    // console.log('the comboSum', comboSum)
+                    redScore + 1
                 } else if (comboSum < 0)
                     document.querySelector('h2').innerHTML = "YELLOW PLAYER WINS"
                     winner = true
+                    yellowScore + 1
+                    console.log(yellowScore);
             } 
-            console.log(winner);
+            // console.log(winner);
         })
         if (!selections.includes(0) && winner == null) {
             document.querySelector('h2').innerHTML = "Tie Game"
