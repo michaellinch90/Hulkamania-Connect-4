@@ -1,7 +1,7 @@
 let selections;
 let winner = null;
-let redScore = 0;
-let yellowScore = 0;
+let redScoreStart = 0;
+let yellowScoreStart = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     let chip = document.querySelectorAll(".circle")
@@ -138,12 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Math.abs(comboSum) === 4) {
                 let myImageYellow = new Image();
                 let myImageRed = new Image();
+                // let redScore = redScoreStart;
+                // let yellowScore = yellowScoreStart;
                 if (comboSum > 0) {
                     myImageRed.src = "https://fontmeme.com/permalink/220810/5014fffd180dcf1452ce23093f492c11.png";
                     document.querySelector('h2').appendChild(myImageRed);
                     winner = true
                     // console.log('the comboSum', comboSum)
-                    redScore++
+                    // redScore++
                     console.log('this is red' + redScore)
                     document.getElementById('redScore').innerHTML = redScore;
                 } if (comboSum < 0)
@@ -152,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  document.body.appendChild(myImageYellow);
                     document.querySelector('h2').appendChild(myImageYellow);
                     winner = true
-                    yellowScore++
+                    // yellowScore++
                     console.log(yellowScore);
                     console.log(comboSum);
                     document.getElementById('yellowScore').innerHTML = yellowScore;
@@ -168,6 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshButton.onclick = function (){
         location.reload();
     }
-    document.getElementById('redScore').innerHTML = redScore;
-    document.getElementById('yellowScore').innerHTML = yellowScore;
+    document.getElementById('redScore').innerHTML = redScoreStart;
+    document.getElementById('yellowScore').innerHTML = yellowScoreStart;
 
