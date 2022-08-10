@@ -2,7 +2,6 @@ let selections;
 let winner = null;
 let redScoreStart = 0;
 let yellowScoreStart = 0;
-
 document.addEventListener('DOMContentLoaded', () => {
     let chip = document.querySelectorAll(".circle")
     
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkWinner() {
         winningCombos.forEach(function(combo) {
-            // console.log(selections);
+            console.log(selections);
             let redScore = 0;
             let comboSum = parseInt(selections[combo[0]]) + 
                             parseInt(selections[combo[1]]) + 
@@ -165,11 +164,38 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('h2').innerHTML = "Tie Game"
         }
     }
+
     let refreshButton = document.getElementById("refresh");
 
     refreshButton.onclick = function (){
         location.reload();
     }
+    for (i = 0; i<chip.length; i++) {
+        let nextButton = document.getElementById("next");
+        chip.classList.remove('red');
+        nextButton.onclick = function (){
+        selections.splice('0');
+        // console.log(selections);
+        selections.push = [0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+          ]
+        // console.log(selections);
+        chip.classList.remove('red');
+        
+    }
+    
+    }
+    // let nextButton = document.getElementById("next");
+    // nextButton.onclick = function (){
+    //     selections.splice('0');
+    //     console.log(selections);
+
+    // }
+    
     document.getElementById('redScore').innerHTML = redScoreStart;
     document.getElementById('yellowScore').innerHTML = yellowScoreStart;
 
