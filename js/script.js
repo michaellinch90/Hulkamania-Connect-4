@@ -105,12 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
         chip[i].onclick = () => {
             let nextRow = chip[i + 7];
           if (winner != null) {
+            return;  
+          }if (chip[i].classList.contains('taken')) {
+            // console.log('bye');
             return;
           }else if
             (nextRow.classList.contains('taken')) {
+                // console.log('hello');
             selections[i] = player[currentPlayer.toString()].value;//click inserts index in selections array
             // console.log(selections)
-            let color = currentPlayer == 1 ? 'red': 'yellow'
+            let color = currentPlayer === 1 ? 'red': 'yellow'
             chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
             chip[i].classList.add('taken')
             currentPlayer *= -1//changes player
@@ -137,11 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     winner = true
                     // console.log('the comboSum', comboSum)
                     redScore + 1
+                    // console.log('this is red' + redScore)
                 } else if (comboSum < 0)
                     document.querySelector('h2').innerHTML = "YELLOW PLAYER WINS"
                     winner = true
                     yellowScore + 1
-                    console.log(yellowScore);
+                    // console.log(yellowScore);
             } 
             // console.log(winner);
         })
