@@ -38,6 +38,7 @@ Then it's time to play again BROTHER!
 
 #### Approach
 
+- Wrote psuedo code and made a whimsical to ouline project
 - Used Divs in the body to create the board.
 - Defined players 1 and -1
 - Created an array with objects that represent the board. 
