@@ -2,7 +2,7 @@ let selections;
 let winner = null;
 let redScoreStart = 0;
 let yellowScoreStart = 0;
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { //starts the game
     let chip = document.querySelectorAll(".circle")
     
     
@@ -115,53 +115,46 @@ document.addEventListener('DOMContentLoaded', () => {
             chip[i].classList.add('taken')
             currentPlayer *= -1//changes player
             checkWinner();
-            } else {
-                return;
-                }
+            }
             }
         }
     })
 
     function checkWinner() {
         winningCombos.forEach(function(combo) {
-            console.log(selections);
-            let redScore = 0;
             let comboSum = parseInt(selections[combo[0]]) + 
                             parseInt(selections[combo[1]]) + 
                             parseInt(selections[combo[2]]) +
-                            parseInt(selections[combo[3]])
+                            parseInt(selections[combo[3]]);
+                                  
             if (Math.abs(comboSum) === 4) {
                 let myImageYellow = new Image();
                 let myImageRed = new Image();
-                let belt = new Image(300, 300);
-                belt.src = "https://i.imgur.com/dPOu4lD.png";
+                let hogan = new Image(400, 400); 
+                hogan.src = "https://i.imgur.com/dPOu4lD.png"; 
+
                 if (comboSum > 0) {
                     myImageRed.src = "https://fontmeme.com/permalink/220810/5014fffd180dcf1452ce23093f492c11.png";
                     document.querySelector('h2').appendChild(myImageRed);
-                    // document.getElementById('redScore').appendChild(belt);
+                    document.getElementById('redScore').appendChild(hogan);
                     winner = true
-                    console.log('this is red' + redScore)
-                    
-                } if (comboSum < 0)
-                 myImageYellow.src = "https://fontmeme.com/permalink/220810/178370e20ac7455362c4467e594b5b76.png";
-                 document.body.appendChild(myImageYellow);
-                    document.querySelector('h2').appendChild(myImageYellow);
-                    // document.getElementById('yellowScore').appendChild(belt);
-                    winner = true
-                    console.log(yellowScore);
-                    console.log(comboSum);
-                    
-            } 
+                } 
+                else if (comboSum < 0){
+                    myImageYellow.src = "https://fontmeme.com/permalink/220810/178370e20ac7455362c4467e594b5b76.png";
+                        document.body.appendChild(myImageYellow);
+                        document.querySelector('h2').appendChild(myImageYellow);
+                        document.getElementById('yellowScore').appendChild(hogan);
+                        winner = true     
+                } 
+            }    
             
         })
         if (!selections.includes(0) && winner == null) {
             let myImageTie = new Image();
             myImageTie.src = href="https://fontmeme.com/permalink/220811/0690f8d0714774064e5f6a48290417b2.png";
-            // document.body.appendChild(myImageTie);
             document.querySelector('h2').appendChild(myImageTie);
         }
     }
-
     let refreshButton = document.getElementById("refresh");
     
     // var audio = new Audio(Desktop/are-you-crazy.mp3);
@@ -176,4 +169,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
 
-
+    

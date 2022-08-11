@@ -2,11 +2,10 @@
     background: linear-gradient(92deg, red, transparent,yellow);
     display: grid;
     grid-template-columns: 400px auto 400px;
-    grid-template-rows: 80px 50px 1fr 1fr 100px;
+    grid-template-rows: 80px 80px 1fr 1fr 100px;
     justify-items: center;
     align-items: center;
-    /* font-family: 'Poiret One', cursive;
-    font-family: 'Titillium Web', sans-serif;    */
+   
 }
 .title {
     color: antiquewhite;
@@ -40,6 +39,7 @@
     cursor: pointer;
 }
 .board {
+    background-color: antiquewhite;
     grid-column: 2 / auto;
     grid-row: 3 / span 2;
     display: grid;
