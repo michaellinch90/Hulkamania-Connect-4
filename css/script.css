@@ -94,3 +94,6 @@
     display: flex;
     justify-self: flex-end;
 }
+/* .removeHover:hover {
+    opacity: 0;
+} */

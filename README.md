@@ -30,4 +30,47 @@ Then click on the Next Game button to refresh the screen.
 
 Then it's time to play again BROTHER!
 
+#### Technologies Used
+
+-HTML
+-CSS
+-JavaScript
+
+#### Approach
+
+- Used Divs in the body to create the board.
+- Defined players 1 and -1
+- Created an array with objects that represent the board. 
+- Created an array with the winning combinations
+- Made and onclick function that referenced the next row down (i +7)
+    - Only allows the onclick if object below has 'Taken' class
+    - Onclick function changes colors and inputs class of taken and player color
+    - Changes player by mutiplying by -1
+- Made a winning combos function
+    - forEach function that runs through winning combinations
+    - checks is the sum of winning combo has an absolute value of 4
+    - If sum is positive then player 1 wins if negative player 2 wins
+    - Inserts image into HTML
+- Made function to check tie
+    - Looks at board array if it's full and there are no '0's then tie
+- Made a reload button to refresk the page
+- Used flexBox and Grid to style the board
+
+#### What went well...
+
+The ability to manipulate Grid and FlexBox was a big win. I was able to successfully style and manipulate my objects.
+
+#### Hurdles
+
+-My initial hurdle was the gravity aspect of the game. Having only the bottom untaken row be the only available object to manipulate was difficult and caused me to remake my board and arrays multiple times. 
+
+-After finishing the game I struggled with many of my icebox additions. Only being able to successfully add 2 of a long list to my game. 
+
+#### Futur Features 
+
+- Score Board
+- Refresh Board Button/Function
+- Audio when clicking on circle and restarting the game
+- Removing the hover when circle is clicked
+
 #### [Get Started Now](https://hulamanina-connect-4.netlify.app/)
