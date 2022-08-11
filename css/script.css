@@ -2,7 +2,7 @@
     background: linear-gradient(92deg, red, transparent,yellow);
     display: grid;
     grid-template-columns: 400px auto 400px;
-    grid-template-rows: 80px 80px 1fr 1fr 100px;
+    grid-template-rows: 80px 80px 1fr 3fr 100px;
     justify-items: center;
     align-items: center;
    
