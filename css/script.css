@@ -5,8 +5,8 @@
     grid-template-rows: 80px 50px 1fr 1fr 100px;
     justify-items: center;
     align-items: center;
-    font-family: 'Poiret One', cursive;
-    font-family: 'Titillium Web', sans-serif;   
+    /* font-family: 'Poiret One', cursive;
+    font-family: 'Titillium Web', sans-serif;    */
 }
 .title {
     color: antiquewhite;

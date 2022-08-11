@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (comboSum > 0) {
                     myImageRed.src = "https://fontmeme.com/permalink/220810/5014fffd180dcf1452ce23093f492c11.png";
                     document.querySelector('h2').appendChild(myImageRed);
-                    document.getElementById('redScore').appendChild(belt);
+                    // document.getElementById('redScore').appendChild(belt);
                     winner = true
                     console.log('this is red' + redScore)
                     
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  myImageYellow.src = "https://fontmeme.com/permalink/220810/178370e20ac7455362c4467e594b5b76.png";
                  document.body.appendChild(myImageYellow);
                     document.querySelector('h2').appendChild(myImageYellow);
-                    document.getElementById('yellowScore').appendChild(belt);
+                    // document.getElementById('yellowScore').appendChild(belt);
                     winner = true
                     console.log(yellowScore);
                     console.log(comboSum);
@@ -155,7 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
         })
         if (!selections.includes(0) && winner == null) {
-            document.querySelector('h2').innerHTML = "Tie Game"
+            let myImageTie = new Image();
+            myImageTie.src = href="https://fontmeme.com/permalink/220811/0690f8d0714774064e5f6a48290417b2.png";
+            // document.body.appendChild(myImageTie);
+            document.querySelector('h2').appendChild(myImageTie);
         }
     }
 
