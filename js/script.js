@@ -113,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => { //starts the game
             let color = currentPlayer === 1 ? 'red': 'yellow'
             chip[i].classList.add(color) //if current player 1 then 'red' if not 'yellow'
             chip[i].classList.add('taken')
-            // chip[i].classList.add('removeHover')
             currentPlayer *= -1//changes player
             checkWinner();
             }
