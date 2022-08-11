@@ -90,3 +90,7 @@
     justify-self: flex-start; 
 }
 
+#redMania {
+    display: flex;
+    justify-self: flex-end;
+}
