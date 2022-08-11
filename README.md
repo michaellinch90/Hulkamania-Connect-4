@@ -30,4 +30,4 @@ Then click on the Next Game button to refresh the screen.
 
 Then it's time to play again BROTHER!
 
-[Get Started Now](https://hulamanina-connect-4.netlify.app/)
+#### [Get Started Now](https://hulamanina-connect-4.netlify.app/)
