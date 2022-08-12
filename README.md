@@ -1,4 +1,4 @@
-#### Welcome to HULKAMANIA Connect 4
+## Welcome to HULKAMANIA Connect 4
 
 Here is the classic connect 4 game with a nostalgic HULKAMANIA theme. There are 2 players and the goal is to get four of your color pieces in a row, either veritical, horizonatal or diagonal. Players take turns filling in the bottom row available until there is a connect 4 or the board is full and thre is a tie.
 
@@ -67,7 +67,7 @@ The ability to manipulate Grid and FlexBox was a big win. I was able to successf
 
 -After finishing the game I struggled with many of my icebox additions. Only being able to successfully add 2 of a long list to my game. 
 
-#### Futur Features 
+#### Future Features 
 
 - Score Board
 - Refresh Board Button/Function
