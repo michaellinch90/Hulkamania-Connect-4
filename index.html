@@ -74,6 +74,14 @@
         <div id="redScore" class="score"></div>
         <div id="yellowScore" class="score"></div>
         <button id="refresh"><img src="https://fontmeme.com/permalink/220811/e03c39fddaa5b2552ca834678b763ef9.png" alt="hulk-hogan-font" border="0"></button>
+        <audio controls  src="/audio/Hulk-Hogan-Latest-Theme-Song-Full.mp3" loop></audio>
+        <script>
+            window.addEventListener("DOMContentLoaded", event => {
+              const audio = document.querySelector("audio");
+              audio.volume = 0.2;
+              audio.play();
+            });
+            </script>
     </div>
 </body>
 </html>

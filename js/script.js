@@ -1,7 +1,6 @@
 let selections;
 let winner = null;
-let redScoreStart = 0;
-let yellowScoreStart = 0;
+
 document.addEventListener('DOMContentLoaded', () => { //starts the game
     let chip = document.querySelectorAll(".circle")
     
@@ -156,17 +155,9 @@ document.addEventListener('DOMContentLoaded', () => { //starts the game
         }
     }
     let refreshButton = document.getElementById("refresh");
-    
-    // var audio = new Audio(Desktop/are-you-crazy.mp3);
-
-//     // audio.oncanplaythrough = function(){
-//     // audio.play();
-// }
 
     refreshButton.onclick = function (){
-        // audio.play();
         location.reload();
     }
     
 
-    
